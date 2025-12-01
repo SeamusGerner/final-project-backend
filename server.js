@@ -31,9 +31,11 @@ app.get("/", (req, res) => {
   res.send("Backend is running!");
 });
 
-// Start server
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+
+const PORT = process.env.PORT || 3000; // use Railway's port or fallback to 3000 locally
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
 
 
